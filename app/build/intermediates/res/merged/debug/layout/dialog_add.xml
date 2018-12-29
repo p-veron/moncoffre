@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="10.0dip" >
+
+    <TextView
+        android:id="@+id/dialog_add_tv_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/dialog_add_et_name"
+        android:text="@string/name_label" />
+
+    <EditText
+        android:id="@id/dialog_add_et_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_add_tv_name"
+        android:inputType="text|textNoSuggestions"
+        android:maxLength="32"
+        android:hint="@string/hint"
+        android:drawableStart="@drawable/ic_menu_web" 
+        android:drawableLeft="@drawable/ic_menu_web"
+        />
+
+    <TextView
+        android:id="@+id/dialog_add_tv_login"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_add_et_name"
+        android:labelFor="@+id/dialog_add_et_login"
+        android:text="@string/login_label" />
+
+    <EditText
+        android:id="@id/dialog_add_et_login"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_add_tv_login"
+        android:inputType="text|textNoSuggestions"
+        android:maxLength="32"
+        android:hint="@string/hint"
+        android:drawableStart="@drawable/ic_menu_people" 
+        android:drawableLeft="@drawable/ic_menu_people" 
+        />
+
+    <TextView
+        android:id="@+id/dialog_add_tv_password"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_add_et_login"
+        android:labelFor="@+id/dialog_add_et_password"
+        android:text="@string/password_label" />
+
+    <EditText
+        android:id="@id/dialog_add_et_password"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_add_tv_password"
+        android:inputType="textPassword|textNoSuggestions"
+        android:maxLength="32"
+        android:hint="@string/hint"
+        android:drawableStart="@android:drawable/ic_lock_lock" 
+        android:drawableLeft="@android:drawable/ic_lock_lock" 
+        />
+
+</RelativeLayout>

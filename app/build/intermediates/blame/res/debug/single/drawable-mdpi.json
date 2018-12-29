@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_menu_web.png",
+        "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/drawable-mdpi/ic_menu_web.png"
+    },
+    {
+        "merged": "/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/merged/debug/drawable-mdpi/logo.png",
+        "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/drawable-mdpi/logo.png"
+    },
+    {
+        "merged": "/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_launcher.png",
+        "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/drawable-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/merged/debug/drawable-mdpi/phone.png",
+        "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/drawable-mdpi/phone.png"
+    },
+    {
+        "merged": "/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/merged/debug/drawable-mdpi/phone2.png",
+        "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/drawable-mdpi/phone2.png"
+    },
+    {
+        "merged": "/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_menu_people.png",
+        "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/drawable-mdpi/ic_menu_people.png"
+    }
+]

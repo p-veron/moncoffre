@@ -1,0 +1,7 @@
+#Sun Jun 18 09:14:10 CEST 2017
+base.0=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_46d4f389192bac75a7727c04538634b379d16a99
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_73830c6723a02a55dd5cc031632931f32dc9dc2f/classes.dex
+base.1=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_73830c6723a02a55dd5cc031632931f32dc9dc2f
+file.0=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_46d4f389192bac75a7727c04538634b379d16a99/classes.dex

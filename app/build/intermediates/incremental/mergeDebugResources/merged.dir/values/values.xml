@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Grey">#ffc7c7c7</color>
+    <color name="White">#ffffffff</color>
+    <dimen name="activity_horizontal_margin">16.0dip</dimen>
+    <dimen name="activity_vertical_margin">5.0dip</dimen>
+    <dimen name="nospace">0.0dip</dimen>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">Mon Coffre</string>
+    <string name="apropos"/>
+    <string name="authors">Mon Coffre\nRomain Moreau, Pascal Véron</string>
+    <string name="button_add_label">Ajouter un site</string>
+    <string name="button_apropos_label">A propos</string>
+    <string name="button_backup_label">Sauvegarder Base</string>
+    <string name="button_changePass_label">Changer de mot de passe</string>
+    <string name="button_close_description">Fermer cette fenêtre</string>
+    <string name="button_delete_description">Supprimer le site</string>
+    <string name="button_edit_description">Modifier le site</string>
+    <string name="button_list_label">Lister les sites</string>
+    <string name="button_removeAll_label">Supprimer tout</string>
+    <string name="button_restore_label">Restaurer Base</string>
+    <string name="button_test_label">Tester Encryption/Décryption</string>
+    <string name="cancel_label">Annuler</string>
+    <string name="decrypt_label">Décrypter</string>
+    <string name="deleteOne_message">Êtes-vous sur de vouloir supprimer ce site de la base de données ?</string>
+    <string name="deleteOne_title">Supprimer ce site</string>
+    <string name="dialog_newPassword_sentence">Saisissez votre nouveau mot de passe</string>
+    <string name="dialog_oldPassword_sentence">Saisissez votre ancien mot de passe</string>
+    <string name="dialog_passwordError_message">Le mot de passe que vous avez saisi est incorrect</string>
+    <string name="dialog_passwordError_title">Mot de passe incorrect</string>
+    <string name="dialog_password_sentence">Saisissez votre mot de passe</string>
+    <string name="dialog_password_title">Mot de passe</string>
+    <string name="empty_login">Le login doit contenir au moins un caractère</string>
+    <string name="empty_passwd">Le mot de passe doit contenir au moins un caractère</string>
+    <string name="empty_site">Le nom du site doit contenir au moins un caractère</string>
+    <string name="encrypt_label">Encrypter</string>
+    <string name="hint">32 caractères au maximum</string>
+    <string name="incomplete_Field">Champ incomplet</string>
+    <string name="key_label">Clé :</string>
+    <string name="listview_label">Liste des sites enregistrés :</string>
+    <string name="login_label">Login :</string>
+    <string name="message_label">Message :</string>
+    <string name="name_label">Nom du site :</string>
+    <string name="passwordEmpty_message">Les deux champs doivent être remplis</string>
+    <string name="passwordEmpty_title">Un champ est vide</string>
+    <string name="passwordNoMatch_message">Les deux mots de passes fournis sont différents</string>
+    <string name="passwordNoMatch_title">Mots de passes différents</string>
+    <string name="password_label">Mot de passe :</string>
+    <string name="progress_message">Veuillez patienter pendant la mise à jour</string>
+    <string name="progress_title">Chargement</string>
+    <string name="removeAll_message">Êtes-vous sur de vouloir supprimer tous les mots de passes de la base de données ?</string>
+    <string name="removeAll_title">Supprimer tous les mots de passe</string>
+    <string name="repeatPassword">Saisissez le une deuxième fois</string>
+    <string name="result_label">Cryptogramme :</string>
+    <string name="urldapm">http://master-dapm.univ-tln.fr/</string>
+    <string name="validate_label">Valider</string>
+    <style name="AppBaseTheme" parent="@android:style/Theme.Light"/>
+    <style name="AppTheme" parent="@style/AppBaseTheme"/>
+</resources>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/White"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <View
+        android:id="@+id/HorizontalBar1"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginLeft="4.0dip"
+        android:layout_marginRight="4.0dip"
+        android:background="?android:dividerVertical" />
+
+    <Button
+        android:id="@+id/button_add"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:background="?android:selectableItemBackground"
+        android:drawableStart="@android:drawable/ic_menu_add"
+        android:drawableLeft="@android:drawable/ic_menu_add"
+        android:onClick="addSiteDialog"
+        android:text="@string/button_add_label" />
+
+    <View
+        android:id="@+id/HorizontalBar2"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginLeft="4.0dip"
+        android:layout_marginRight="4.0dip"
+        android:background="?android:dividerVertical" />
+
+    <Button
+        android:id="@+id/button_list"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:background="?android:selectableItemBackground"
+        android:drawableStart="@android:drawable/ic_menu_sort_by_size"
+        android:drawableLeft="@android:drawable/ic_menu_sort_by_size"
+        android:onClick="goToList"
+        android:text="@string/button_list_label" />
+
+    <View
+        android:id="@+id/HorizontalBar3"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginLeft="4.0dip"
+        android:layout_marginRight="4.0dip"
+        android:background="?android:dividerVertical" />
+
+    <Button
+        android:id="@+id/button_changePass"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:background="?android:selectableItemBackground"
+        android:drawableStart="@android:drawable/ic_menu_edit"
+        android:drawableLeft="@android:drawable/ic_menu_edit"
+        android:onClick="changePassword"
+        android:text="@string/button_changePass_label" />
+
+    <View
+        android:id="@+id/HorizontalBar4"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginLeft="4.0dip"
+        android:layout_marginRight="4.0dip"
+        android:background="?android:dividerVertical" />
+
+    <Button
+        android:id="@+id/button_removeAll"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:background="?android:selectableItemBackground"
+        android:drawableStart="@android:drawable/ic_menu_delete"
+        android:drawableLeft="@android:drawable/ic_menu_delete"
+        android:onClick="removeAll"
+        android:text="@string/button_removeAll_label" />
+
+    <!-- <View
+        android:id="@+id/HorizontalBar5"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginLeft="4.0dip"
+        android:layout_marginRight="4.0dip"
+        android:background="?android:dividerVertical" />
+
+    <Button
+        android:id="@+id/button_backup"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:background="?android:selectableItemBackground"
+        android:drawableStart="@android:drawable/ic_menu_save"
+        android:drawableLeft="@android:drawable/ic_menu_save"
+        android:onClick="backup"
+        android:text="@string/button_backup_label" />
+
+    <View
+        android:id="@+id/HorizontalBar6"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginLeft="4.0dip"
+        android:layout_marginRight="4.0dip"
+        android:background="?android:dividerVertical" />
+
+     <Button
+        android:id="@+id/button_restore"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:background="?android:selectableItemBackground"
+        android:drawableStart="@android:drawable/ic_menu_upload"
+        android:drawableLeft="@android:drawable/ic_menu_upload"
+        android:text="@string/button_restore_label" />
+-->
+
+    <View
+        android:id="@+id/HorizontalBar7"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginLeft="4.0dip"
+        android:layout_marginRight="4.0dip"
+        android:background="?android:dividerVertical" />
+
+    <Button
+        android:id="@+id/button_apropos"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:background="?android:selectableItemBackground"
+        android:drawableStart="@android:drawable/ic_dialog_info"
+        android:drawableLeft="@android:drawable/ic_dialog_info"
+        android:onClick="apropos"
+        android:text="@string/button_apropos_label" />
+
+
+    <View
+        android:id="@+id/HorizontalBar8"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginLeft="4.0dip"
+        android:layout_marginRight="4.0dip"
+        android:background="?android:dividerVertical" />
+
+
+</LinearLayout>

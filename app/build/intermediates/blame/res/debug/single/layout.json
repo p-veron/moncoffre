@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/merged/debug/layout/dialog_login.xml",
+        "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/layout/dialog_login.xml"
+    },
+    {
+        "merged": "/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/merged/debug/layout/activity_crypto.xml",
+        "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/layout/activity_crypto.xml"
+    },
+    {
+        "merged": "/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/merged/debug/layout/activity_list.xml",
+        "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/layout/activity_list.xml"
+    },
+    {
+        "merged": "/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/merged/debug/layout/dialog_change_password.xml",
+        "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/layout/dialog_change_password.xml"
+    },
+    {
+        "merged": "/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/merged/debug/layout/list_element.xml",
+        "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/layout/list_element.xml"
+    },
+    {
+        "merged": "/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/merged/debug/layout/dialog_show.xml",
+        "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/layout/dialog_show.xml"
+    },
+    {
+        "merged": "/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/merged/debug/layout/activity_apropos.xml",
+        "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/layout/activity_apropos.xml"
+    },
+    {
+        "merged": "/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/merged/debug/layout/dialog_choose_password.xml",
+        "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/layout/dialog_choose_password.xml"
+    },
+    {
+        "merged": "/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/merged/debug/layout/dialog_add.xml",
+        "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/layout/dialog_add.xml"
+    }
+]

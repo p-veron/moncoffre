@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.1"
+        sha1="238d52e3d9d1f8a3a5ea0ef73163b3c5d0f99290">
+        <dex dex="/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_46d4f389192bac75a7727c04538634b379d16a99/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.1"
+        sha1="91e8c886db04c9a02b617f1bc1ca13a1c74e47b6">
+        <dex dex="/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_73830c6723a02a55dd5cc031632931f32dc9dc2f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/exploded-aar/com.android.volley/volley/1.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="22.0.1"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.volley-volley-1.0.0_68477959ac23fbff641d43573ceb53ff1845664f/classes.dex" />
+    </item>
+
+</items>

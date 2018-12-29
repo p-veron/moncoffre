@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/et_message"
+        android:text="@string/message_label" />
+
+    <EditText
+        android:id="@id/et_message"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_message"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_message"
+        android:labelFor="@+id/et_password"
+        android:text="@string/password_label" />
+
+    <EditText
+        android:id="@id/et_password"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_password"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/tv_key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_password"
+        android:labelFor="@+id/et_key"
+        android:text="@string/key_label" />
+
+    <EditText
+        android:id="@id/et_key"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_key"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_key"
+        android:labelFor="@+id/et_result"
+        android:text="@string/result_label" />
+
+    <EditText
+        android:id="@id/et_result"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_result"
+        android:inputType="textMultiLine" />
+
+    <View
+        android:id="@+id/HorizontalBar"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_above="@+id/button_layout"
+        android:layout_marginLeft="4.0dip"
+        android:layout_marginRight="4.0dip"
+        android:layout_marginTop="10.0dip"
+        android:background="?android:dividerVertical" />
+    
+    <LinearLayout
+        android:id="@id/button_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="48.0dip"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/button_encrypt"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="1.0"
+            android:onClick="encrypt"
+            android:text="@string/encrypt_label" />
+        
+        <View
+            android:id="@+id/VerticalBar1"
+            android:layout_width="1.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4.0dip"
+            android:layout_marginTop="4.0dip"
+            android:background="?android:dividerVertical" />
+
+        <Button
+            android:id="@+id/button_decrypt"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_weight="1.0"
+            android:onClick="decrypt"
+            android:text="@string/decrypt_label" />
+    </LinearLayout>
+
+</RelativeLayout>
