@@ -4,10 +4,6 @@
         "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/layout/dialog_login.xml"
     },
     {
-        "merged": "/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/merged/debug/layout/activity_crypto.xml",
-        "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/layout/activity_crypto.xml"
-    },
-    {
         "merged": "/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/merged/debug/layout/activity_list.xml",
         "source": "/Users/pascal/Dropbox/Cours/MyKnox/app/src/main/res/layout/activity_list.xml"
     },

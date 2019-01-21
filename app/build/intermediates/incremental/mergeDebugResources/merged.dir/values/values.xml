@@ -5,6 +5,8 @@
     <dimen name="activity_horizontal_margin">16.0dip</dimen>
     <dimen name="activity_vertical_margin">5.0dip</dimen>
     <dimen name="nospace">0.0dip</dimen>
+    <integer name="max_size_field">32</integer>
+    <integer name="max_size_passwd">20</integer>
     <string name="action_settings">Settings</string>
     <string name="app_name">Mon Coffre</string>
     <string name="apropos"/>

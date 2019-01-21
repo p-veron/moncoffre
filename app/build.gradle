@@ -4,7 +4,7 @@ android {
     buildToolsVersion '22.0.1'
 
     defaultConfig {
-        applicationId "fr.masterdapm.toulon.MyKnox"
+        applicationId "fr.toulon.masterdapm.MonCoffre"
         minSdkVersion 19
         targetSdkVersion 19
     }
@@ -17,6 +17,3 @@ android {
     }
 }
 
-dependencies {
-    compile 'com.android.volley:volley:1.0.0'
-}

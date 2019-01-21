@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="fr.masterdapm.toulon.MyKnox"
+    package="fr.toulon.masterdapm.MonCoffre"
     android:versionCode="2"
     android:versionName="2.0" >
 
@@ -16,10 +16,10 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="True"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="fr.masterdapm.toulon.MyKnox.MyKnoxActivity"
+            android:name="fr.toulon.masterdapm.MonCoffre.MyKnoxActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -29,16 +29,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="fr.masterdapm.toulon.MyKnox.CryptoActivity"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="fr.masterdapm.toulon.MyKnox.ListActivity"
+            android:name="fr.toulon.masterdapm.MonCoffre.ListActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="fr.masterdapm.toulon.MyKnox.apropos"
+            android:name="fr.toulon.masterdapm.MonCoffre.Apropos"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
