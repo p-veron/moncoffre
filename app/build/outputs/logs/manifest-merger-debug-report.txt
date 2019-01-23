@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:2:1-42:12
+ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:2:1-37:12
 	package
 		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:3:5-45
 		INJECTED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml
@@ -15,71 +15,65 @@ ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:2
 		INJECTED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:7:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:8:5-80
+	android:name
+		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:8:22-78
+application
+ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:10:5-36:23
+	android:label
+		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:14:9-41
+	android:supportsRtl
+		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:11:9-35
+	android:allowBackup
+		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:12:9-35
+	android:icon
+		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:13:9-45
+	android:theme
+		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:15:9-40
+activity#fr.toulon.masterdapm.MonCoffre.MyKnoxActivity
+ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:16:9-25:20
+	android:screenOrientation
+		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:19:13-49
+	android:label
+		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:18:13-45
+	android:name
+		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:17:13-73
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:20:13-24:29
+action#android.intent.action.MAIN
+ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:21:17-69
+	android:name
+		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:21:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:23:17-77
+	android:name
+		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:23:27-74
+activity#fr.toulon.masterdapm.MonCoffre.ListActivity
+ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:26:9-30:20
+	android:screenOrientation
+		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:29:13-49
+	android:label
+		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:28:13-45
+	android:name
+		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:27:13-71
+activity#fr.toulon.masterdapm.MonCoffre.Apropos
+ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:31:9-35:20
+	android:screenOrientation
+		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:34:13-49
+	android:label
+		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:33:13-45
+	android:name
+		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:32:13-66
 uses-sdk
-ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:7:5-9:41
+INJECTED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 	android:targetSdkVersion
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:9:9-38
 		INJECTED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:8:9-35
 		INJECTED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml
-uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:11:5-79
-	android:name
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:11:22-77
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:12:5-80
-	android:name
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:12:22-78
-application
-ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:14:5-40:23
-	android:label
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:18:9-41
-	android:supportsRtl
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:15:9-35
-	android:allowBackup
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:16:9-35
-	android:icon
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:17:9-45
-	android:theme
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:19:9-40
-activity#fr.toulon.masterdapm.MonCoffre.MyKnoxActivity
-ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:20:9-29:20
-	android:screenOrientation
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:23:13-49
-	android:label
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:22:13-45
-	android:name
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:21:13-73
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:24:13-28:29
-action#android.intent.action.MAIN
-ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:25:17-69
-	android:name
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:25:25-66
-category#android.intent.category.LAUNCHER
-ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:27:17-77
-	android:name
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:27:27-74
-activity#fr.toulon.masterdapm.MonCoffre.ListActivity
-ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:30:9-34:20
-	android:screenOrientation
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:33:13-49
-	android:label
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:32:13-45
-	android:name
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:31:13-71
-activity#fr.toulon.masterdapm.MonCoffre.Apropos
-ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:35:9-39:20
-	android:screenOrientation
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:38:13-49
-	android:label
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:37:13-45
-	android:name
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:36:13-66
-uses-permission#android.permission.INTERNET
-ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:41:5-67
-	android:name
-		ADDED from /Users/pascal/Dropbox/Cours/MyKnox/app/src/main/AndroidManifest.xml:41:22-64

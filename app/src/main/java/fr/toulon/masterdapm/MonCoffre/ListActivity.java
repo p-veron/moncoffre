@@ -7,6 +7,8 @@ import java.util.Arrays;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -25,12 +27,13 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+
 import fr.toulon.masterdapm.MonCoffre.lib.MyCipher;
 import fr.toulon.masterdapm.MonCoffre.lib.PasswordLog;
 import fr.toulon.masterdapm.MonCoffre.lib.PasswordLogDataSource;
-import fr.toulon.masterdapm.MonCoffre.lib.MyDialog;
 
-public class ListActivity extends Activity implements OnItemClickListener, OnClickListener {
+public class ListActivity extends Activity implements OnItemClickListener {
 
 	private ListView listview;
 	private char[] password;
@@ -40,9 +43,76 @@ public class ListActivity extends Activity implements OnItemClickListener, OnCli
 
     private int laposition;
 
-    MyDialog InfoDialog;
-	PasswordLog[] values;
-    byte[] text;
+    private MyDialog InfoDialog;
+	private PasswordLog[] values;
+    private byte[] text;
+
+    public static class MyDialog extends DialogFragment implements OnClickListener{
+        /* classe pour boite de dialogue personnalisée avec images à la place des boutons */
+
+        public MyDialog()
+        {
+        }
+
+        public static MyDialog newInstance(String letitre, int icon, int layout_button, byte[] infos_connexion) {
+            MyDialog frag = new MyDialog();
+            Bundle args = new Bundle();
+            args.putString("Titre", letitre);
+            args.putInt("R_icon",icon);
+            args.putInt("R_layout_button",layout_button);
+            args.putByteArray("Infos",infos_connexion);
+            frag.setArguments(args);
+            return frag;
+        }
+
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState){
+
+            View Mydiagview ;
+            AlertDialog.Builder builder;
+            String titre;
+            int R_icon, R_layout_button;
+            byte[] infos;
+
+            titre = getArguments().getString("Titre");
+            R_icon = getArguments().getInt("R_icon");
+            R_layout_button = getArguments().getInt("R_layout_button");
+            infos = getArguments().getByteArray("Infos");
+            builder = new AlertDialog.Builder(getActivity());
+            builder.setTitle(titre);
+            builder.setIcon(R_icon);
+            Mydiagview = getActivity().getLayoutInflater().inflate(R_layout_button, null);
+            builder.setView(Mydiagview);
+            try {
+			((TextView) Mydiagview.findViewById(R.id.dialog_show_login_placeholder))
+					.setText(new String(Arrays.copyOfRange(infos, 1, infos[0] + 1), "UTF-8"));
+		    } catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		    }
+
+		    try {
+			((TextView) Mydiagview.findViewById(R.id.dialog_show_password_placeholder))
+					.setText(new String(Arrays.copyOfRange(infos, infos[0]+1, infos.length),"UTF-8"));
+		    } catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		    }
+            Mydiagview.findViewById(R.id.button_close).setOnClickListener(this);
+            Mydiagview.findViewById(R.id.button_delete).setOnClickListener(this);
+            Mydiagview.findViewById(R.id.button_edit).setOnClickListener(this);
+            Mydiagview.findViewById(R.id.dialog_show_login).setOnClickListener(this);
+            Mydiagview.findViewById(R.id.dialog_show_password).setOnClickListener(this);
+            return builder.create();
+
+        }
+
+        @Override
+        public void onClick(View v) {
+            ((ListActivity)getActivity()).MyonClick(v);
+        }
+    }
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -68,46 +138,11 @@ public class ListActivity extends Activity implements OnItemClickListener, OnCli
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
-	
-		
+
 		text = cipher.dechiffre(password, values[position].getCrypto());
         laposition = position ;
-
-		View showView = getLayoutInflater().inflate(R.layout.dialog_show, null);
-
-		InfoDialog = new MyDialog(showView, values[position].getSiteName(), R.drawable.ic_menu_web);
-
-		InfoDialog.show(getFragmentManager(), "Informations de connexion");
-
-
-		try {
-			((TextView) showView.findViewById(R.id.dialog_show_login_placeholder))
-					.setText(new String(Arrays.copyOfRange(text, 1, text[0] + 1), "UTF-8"));
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-
-		try {
-			((TextView) showView
-					.findViewById(R.id.dialog_show_password_placeholder))
-					.setText(new String(Arrays.copyOfRange(text, text[0]+1, text.length),"UTF-8"));
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-        showView.findViewById(R.id.dialog_show_login).setOnClickListener(this);
-
-        showView.findViewById(R.id.dialog_show_password).setOnClickListener(this);
-
-        showView.findViewById(R.id.button_close).setOnClickListener(this);
-
-        showView.findViewById(R.id.button_delete).setOnClickListener(this);
-
-        showView.findViewById(R.id.button_edit).setOnClickListener(this);
-
+        InfoDialog = MyDialog.newInstance(values[position].getSiteName(), R.drawable.ic_menu_web,R.layout.dialog_show,text);
+        InfoDialog.show(getFragmentManager(), "Informations de connexion");
 
 	}
 
@@ -134,13 +169,6 @@ public class ListActivity extends Activity implements OnItemClickListener, OnCli
 		j = text[0];
 		aux = Arrays.copyOfRange(text, 1, j+1);
 		try {
-			Log.d("masterdapm.MonCoffre",new String(text,"UTF-8"));
-		} catch (UnsupportedEncodingException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-
-		try {
 			((EditText) addSiteView.findViewById(R.id.dialog_add_et_login))
 					.setText(new String(aux, "UTF-8"));
 		} catch (UnsupportedEncodingException e) {
@@ -149,13 +177,6 @@ public class ListActivity extends Activity implements OnItemClickListener, OnCli
 		}
 
 		Arrays.fill(aux, (byte) 0);
-
-		try {
-			Log.d("masterdapm.MonCoffre",new String(text,"UTF-8"));
-		} catch (UnsupportedEncodingException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
 
 		aux = Arrays.copyOfRange(text, j+1, text.length);	
 		try {
@@ -166,13 +187,6 @@ public class ListActivity extends Activity implements OnItemClickListener, OnCli
 			e.printStackTrace();
 		} 
 		Arrays.fill(aux, (byte) 0);
-
-		try {
-			Log.d("masterdapm.MonCoffre",new String(text,"UTF-8"));
-		} catch (UnsupportedEncodingException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
 
 		EditText editSiteName = ((EditText) addSiteView
 				.findViewById(R.id.dialog_add_et_name));
@@ -308,28 +322,6 @@ public class ListActivity extends Activity implements OnItemClickListener, OnCli
                             }
                         });
 
-     /*   MyDialog DeleteDialog = new MyDialog(getResources().getString(R.string.deleteOne_title), android.R.drawable.ic_dialog_alert);
-		DeleteDialog.getBuilder()
-				.setMessage(R.string.deleteOne_message)
-				.setPositiveButton(R.string.validate_label,
-						new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog,
-									int which) {
-								datasource.open();
-								datasource.delete(passwordLog);
-								datasource.close();
-								refreshList();
-							}
-
-						})
-				.setNegativeButton(R.string.cancel_label,
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int id) {
-								dialog.cancel();
-							}
-						});
-        DeleteDialog.show(getFragmentManager(),"Informations de suppression");*/
         builder.create().show();
 	}
 
@@ -348,8 +340,8 @@ public class ListActivity extends Activity implements OnItemClickListener, OnCli
 		adapter.notifyDataSetChanged();
 	}
 
-    @Override
-    public void onClick(View v) {
+    public void MyonClick(View v)
+    {
         // TODO Auto-generated method stub
         String clipkey="", alerte="", ClipString="";
 

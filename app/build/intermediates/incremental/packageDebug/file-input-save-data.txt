@@ -1,6 +1,6 @@
 #Internal package file, do not edit.
-#Mon Jan 21 11:23:50 CET 2019
-25.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/phone.png
+#Wed Jan 23 10:22:41 CET 2019
+25.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/layout/dialog_add.xml
 25.base=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_
 22.set=ANDROID_RESOURCE
 8.set=ANDROID_RESOURCE
@@ -10,7 +10,7 @@
 14.base=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1
 16.set=DEX
 count=30
-6.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/layout/dialog_show.xml
+6.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/ic_launcher.png
 6.base=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_
 26.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex
 2.set=DEX
@@ -25,7 +25,7 @@ count=30
 15.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex
 15.base=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3
 26.set=DEX
-7.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/ic_launcher.png
+7.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/layout/dialog_show.xml
 7.base=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_
 15.set=DEX
 27.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/layout/activity_list.xml
@@ -80,7 +80,7 @@ count=30
 4.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/logo.png
 4.base=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_
 23.set=ANDROID_RESOURCE
-24.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/layout/dialog_add.xml
+24.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/phone.png
 9.set=ANDROID_RESOURCE
 24.base=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_
 12.set=ANDROID_RESOURCE

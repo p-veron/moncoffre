@@ -5,46 +5,46 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="45538731947362"
+    timestamp="35516438338458"
     token="-8716663038956227530"
-    verifier="FIELD_REMOVED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="559" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="22" />
+        duration="0" />
     <task
         name="verifier"
-        duration="20" />
-
-    <artifact
-        location="/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-        type="RESOURCES" />
-    <artifact
-        location="/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
-        type="DEX" />
+        duration="0" />
 
     <build
-        timestamp="45327066350316"
+        timestamp="30454647432598"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/pascal/Dropbox/Cours/MyKnox/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="45538731947362"
-        verifier="FIELD_REMOVED" >
+        timestamp="33275983513464"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-            type="RESOURCES" />
+            location="/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="35504626784153"
+        verifier="FIELD_TYPE_CHANGE" >
         <artifact
             location="/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
             type="DEX" />
     </build>
+    <build
+        timestamp="35516438338458"
+        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>
