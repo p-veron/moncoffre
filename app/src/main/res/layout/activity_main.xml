@@ -85,7 +85,7 @@
         android:onClick="removeAll"
         android:text="@string/button_removeAll_label" />
 
-    <!-- <View
+     <View
         android:id="@+id/HorizontalBar5"
         android:layout_width="fill_parent"
         android:layout_height="1.0dip"
@@ -103,7 +103,7 @@
         android:drawableLeft="@android:drawable/ic_menu_save"
         android:onClick="backup"
         android:text="@string/button_backup_label" />
-
+<!--
     <View
         android:id="@+id/HorizontalBar6"
         android:layout_width="fill_parent"

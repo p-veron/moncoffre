@@ -11,6 +11,7 @@
     <string name="app_name">Mon Coffre</string>
     <string name="apropos"/>
     <string name="authors">Mon Coffre\nRomain Moreau, Pascal Véron</string>
+    <string name="backup">Sauvegarde de la base</string>
     <string name="button_add_label">Ajouter un site</string>
     <string name="button_apropos_label">A propos</string>
     <string name="button_backup_label">Sauvegarder Base</string>
@@ -26,6 +27,7 @@
     <string name="decrypt_label">Décrypter</string>
     <string name="deleteOne_message">Êtes-vous sur de vouloir supprimer ce site de la base de données ?</string>
     <string name="deleteOne_title">Supprimer ce site</string>
+    <string name="dialog_email_sentence">Saisissez votre email</string>
     <string name="dialog_newPassword_sentence">Saisissez votre nouveau mot de passe</string>
     <string name="dialog_oldPassword_sentence">Saisissez votre ancien mot de passe</string>
     <string name="dialog_passwordError_message">Le mot de passe que vous avez saisi est incorrect</string>

@@ -400,13 +400,6 @@ public class MyKnoxActivity extends Activity {
 	}
 
 	/**
-	 * @return the password
-	 */
-	public char[] getPassword() {
-		return password;
-	}
-
-	/**
 	 * @param password
 	 *            the password to set
 	 */
@@ -454,29 +447,30 @@ public class MyKnoxActivity extends Activity {
         try {
             filetemp = new File(getExternalFilesDir(null), filename);
             File file = Environment.getDataDirectory();
-            String pathToMyAttachedFile = "data/fr.toulon.masterdapm.fr.toulon.masterdapm.MonCoffre/databases/passwords.db";
+            String pathToMyAttachedFile = "data/fr.toulon.masterdapm.MonCoffre/databases/passwords.db";
             file = new File(file, pathToMyAttachedFile);
             InputStream is = new FileInputStream(file);
             OutputStream os = new FileOutputStream(filetemp);
             byte[] toWrite = new byte[is.available()]; //Init a byte array for handing data transfer
-            Log.i("Available ", is.available() + "");
+         //   Log.i("Available ", is.available() + "");
             int result = is.read(toWrite); //Read the data from the byte array
-            Log.i("Result", result + "");
+         //   Log.i("Result", result + "");
             os.write(toWrite); //Write it to the output stream
             is.close(); //Close it
             os.close(); //Close it
-            Log.i("Copying to", "" +getExternalFilesDir(null) + File.separator + filename);
-            Log.i("Copying from", getFilesDir() + File.separator + filename + "");
+         //   Log.i("Copying to", "" +getExternalFilesDir(null) + File.separator + filename);
+         //   Log.i("Copying from", getFilesDir() + File.separator + filename + "");
         } catch (Exception e) {
             Toast.makeText(this, "File write failed: " + e.getLocalizedMessage(), Toast.LENGTH_LONG).show(); //if there's an error, make a piece of toast and serve it up
         }
     }
 
+
 	public void writeFromExternal(String filename){
 		try {
             File file = new File(getExternalFilesDir(null), filename);
             filetemp = Environment.getDataDirectory();
-            String pathToMyAttachedFile = "data/fr.masterdapm.toulon.fr.toulon.masterdapm.fr.toulon.masterdapm.fr.toulon.masterdapm.MonCoffre/databases/passwords2.db";
+            String pathToMyAttachedFile = "data/fr.toulon.masterdapm.MonCoffre/databases/passwords.db";
 			filetemp = new File(filetemp, pathToMyAttachedFile);
 			InputStream is = new FileInputStream(file);
 			OutputStream os = new FileOutputStream(filetemp);
@@ -502,43 +496,73 @@ public class MyKnoxActivity extends Activity {
         }
     }
 
-	public void backup(View v)
-	{
+    public void do_backup(String email)
+    {
+        String [] tab_email = new String[1];
+        tab_email[0] = email;
         writeToExternal("passwords.db.sc");
-		Intent emailIntent = new Intent(Intent.ACTION_SEND);
-		emailIntent.setType("text/plain");
-		emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {"veron@univ-tln.fr"});
-		emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Sauvegarde BD Mon Coffre");
-	//	emailIntent.putExtra(Intent.EXTRA_TEXT, "body text");
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, tab_email);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Sauvegarde BD Mon Coffre");
+        //	emailIntent.putExtra(Intent.EXTRA_TEXT, "body text");
         filetemp = Environment.getExternalStorageDirectory();
         Log.d("KNOX",filetemp.toString());
-		String pathToMyAttachedFile = "Android/data/fr.toulon.masterdapm.fr.toulon.masterdapm.MonCoffre/files/passwords.db.sc";
-		filetemp = new File(filetemp, pathToMyAttachedFile);
+        String pathToMyAttachedFile = "Android/data/fr.toulon.masterdapm.MonCoffre/files/passwords.db.sc";
+        filetemp = new File(filetemp, pathToMyAttachedFile);
         if (!filetemp.exists())
         {
             Log.d("KNOX","No file");
+            Toast.makeText(this,"Fichier passwords.ds.sc inexistant",Toast.LENGTH_LONG).show();
             return;
         }
-		if (!filetemp.canRead()) {
+        if (!filetemp.canRead()) {
             Log.d("KNOX","No Read");
-			return;
-		}
-		Uri uri = Uri.fromFile(filetemp);
+            Toast.makeText(this,"Erreur lecture passwords.ds.sc",Toast.LENGTH_LONG).show();
+            return;
+        }
+        Uri uri = Uri.fromFile(filetemp);
         String mimeType = getContentResolver().getType(uri);
         Log.d("KOX","Mime : "+mimeType);
-		emailIntent.putExtra(Intent.EXTRA_STREAM, uri);
-      //  emailIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-		startActivityForResult(Intent.createChooser(emailIntent, "Pick an Email provider"),12);
-	}
+        emailIntent.putExtra(Intent.EXTRA_STREAM, uri);
+        //  emailIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        startActivityForResult(Intent.createChooser(emailIntent, "Pick an Email provider"),12);
+    }
 
-    public void restore(View v)
+    public void backup(View v)
     {
-        writeFromExternal("passwords.db.sc");
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+        final View dialogEmailView = inflater.inflate(R.layout.dialog_email, null);
+
+        Log.d("MonCoffre","OK");
+        builder.setView(dialogEmailView)
+                .setIcon(android.R.drawable.ic_dialog_alert).setTitle(R.string.backup)
+                .setPositiveButton(R.string.validate_label, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String adr_email = ((EditText) dialogEmailView.findViewById(R.id.dialog_et_email)).getText().toString();
+                Log.d("MonCoffre",adr_email);
+                if (!adr_email.equals(""))
+                    do_backup(adr_email);
+                else
+                    Toast.makeText(getBaseContext(),"Le champ email ne peut pas être vide",Toast.LENGTH_LONG).show();
+            }
+
+        })
+                .setNegativeButton(R.string.cancel_label, null).show();
+
+    }
+
+	/* TODO */
+   // public void restore(View v)
+    //{
+      //  writeFromExternal("passwords.db.sc");
       //  Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
       //  Uri uri = Uri.parse(Environment.getExternalStorageDirectory().toString()); // a directory
       // intent.setDataAndType(uri, "*/*");
        // intent.setData(uri);
        // startActivity(Intent.createChooser(intent, "Open folder"));
-    }
+    //}
 
 }

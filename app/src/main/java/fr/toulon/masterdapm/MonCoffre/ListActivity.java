@@ -33,6 +33,7 @@ import fr.toulon.masterdapm.MonCoffre.lib.MyCipher;
 import fr.toulon.masterdapm.MonCoffre.lib.PasswordLog;
 import fr.toulon.masterdapm.MonCoffre.lib.PasswordLogDataSource;
 
+
 public class ListActivity extends Activity implements OnItemClickListener {
 
 	private ListView listview;
@@ -43,19 +44,128 @@ public class ListActivity extends Activity implements OnItemClickListener {
 
     private int laposition;
 
-    private MyDialog InfoDialog;
-	private PasswordLog[] values;
-    private byte[] text;
+    private MyDialogIm InfoDialog;
+	static private PasswordLog[] values;
+    static private byte[] text;
+    final int action_delete = 1;
+    final int action_empty = 2 ;
+    static final int action_edit = 3;
 
-    public static class MyDialog extends DialogFragment implements OnClickListener{
-        /* classe pour boite de dialogue personnalisée avec images à la place des boutons */
+    public static class MyDialog extends DialogFragment {
 
         public MyDialog()
         {
+
         }
 
-        public static MyDialog newInstance(String letitre, int icon, int layout_button, byte[] infos_connexion) {
+        public static MyDialog newInstance(int title, int message, int mess_positive, int mess_negative, int icon, int rlayout, int idx, int action) {
+
             MyDialog frag = new MyDialog();
+            Bundle args = new Bundle();
+            args.putInt("R_title", title);
+            args.putInt("R_mess_positive",mess_positive);
+            args.putInt("R_mess_negative",mess_negative);
+            args.putInt("R_mess",message);
+            args.putInt("R_icon",icon);
+            args.putInt("idx",idx);
+			args.putInt("R_layout",rlayout);
+            args.putInt("action",action);
+            frag.setArguments(args);
+            return frag;
+        }
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState){
+            int title, icon, mess_positive, mess_negative, message, rlayout;
+			final int index, action;
+			/* final pour pouvoir être passé dans le listener */
+            AlertDialog.Builder builder;
+            final View Mydiagview;
+
+            title = getArguments().getInt("R_title");
+            mess_positive = getArguments().getInt("R_mess_positive");
+            mess_negative = getArguments().getInt("R_mess_negative");
+            message = getArguments().getInt("R_mess");
+            icon = getArguments().getInt("R_icon");
+			rlayout = getArguments().getInt("R_layout");
+            index = getArguments().getInt("idx");
+            action = getArguments().getInt("action");
+
+            builder = new AlertDialog.Builder(getActivity());
+			/* la doc Android spécifie que 0 ne paut pas être une valeur d'identifiant */
+            if (icon != 0)
+                builder.setIcon(icon);
+            if (title != 0)
+                builder.setTitle(title);
+            if (message != 0)
+                builder.setMessage(message);
+            if (rlayout != 0) {
+                Mydiagview = getActivity().getLayoutInflater().inflate(rlayout, null);
+                if (action == action_edit){
+                    int j;
+                    byte[] aux;
+
+                    PasswordLog passwordLog = values[index];
+
+                    j = text[0];
+                    aux = Arrays.copyOfRange(text, 1, j+1);
+                    try {
+                        ((EditText) Mydiagview.findViewById(R.id.dialog_add_et_login))
+                                .setText(new String(aux, "UTF-8"));
+                    } catch (UnsupportedEncodingException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+
+                    Arrays.fill(aux, (byte) 0);
+
+                    aux = Arrays.copyOfRange(text, j+1, text.length);
+                    try {
+                        ((EditText) Mydiagview.findViewById(R.id.dialog_add_et_password))
+                                .setText(new String(aux,"UTF-8"));
+                    } catch (UnsupportedEncodingException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                    Arrays.fill(aux, (byte) 0);
+                    EditText editSiteName = ((EditText) Mydiagview
+                            .findViewById(R.id.dialog_add_et_name));
+                    final String OldSiteName = passwordLog.getSiteName();
+                    editSiteName.setText(OldSiteName);
+                }
+                builder.setView(Mydiagview);
+            }
+            else
+            Mydiagview = null;
+            builder.setPositiveButton(mess_positive,
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+                                    ((ListActivity)getActivity()).doPositiveClick(action,index,Mydiagview);
+                                }
+                            }
+                    );
+            if (mess_negative != 0)
+                    builder.setNegativeButton(mess_negative,
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+                                    ((ListActivity)getActivity()).doNegativeClick(action,dialog);
+                                }
+                            }
+                    );
+            return builder.create();
+        }
+    }
+
+
+    public static class MyDialogIm extends DialogFragment implements OnClickListener{
+        /* classe pour boite de dialogue personnalisée avec images à la place des boutons */
+
+        public MyDialogIm()
+        {
+        }
+
+        public static MyDialogIm newInstance(String letitre, int icon, int layout_button, byte[] infos_connexion) {
+            MyDialogIm frag = new MyDialogIm();
             Bundle args = new Bundle();
             args.putString("Titre", letitre);
             args.putInt("R_icon",icon);
@@ -141,7 +251,7 @@ public class ListActivity extends Activity implements OnItemClickListener {
 
 		text = cipher.dechiffre(password, values[position].getCrypto());
         laposition = position ;
-        InfoDialog = MyDialog.newInstance(values[position].getSiteName(), R.drawable.ic_menu_web,R.layout.dialog_show,text);
+        InfoDialog = MyDialogIm.newInstance(values[position].getSiteName(), R.drawable.ic_menu_web,R.layout.dialog_show,text);
         InfoDialog.show(getFragmentManager(), "Informations de connexion");
 
 	}
@@ -155,141 +265,10 @@ public class ListActivity extends Activity implements OnItemClickListener {
 	 *            La chaine login|password décrypté, pour initialiser les champs
 	 *            textes
 	 */
-	public void editSite(final int index, byte[] text) {
+	public void editSite(final int index, final byte[] text) {
 		
-		byte j;
-		byte aux[];
-		
-		/* pour pouvoir le recuperer dans la relance de la boite d'edition si jamais un champ est vide */
-		final byte[] letexte = Arrays.copyOf(text, text.length);
-		PasswordLog passwordLog = values[index];
-		final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		LayoutInflater inflater = this.getLayoutInflater();
-		final View addSiteView = inflater.inflate(R.layout.dialog_add, null);
-		j = text[0];
-		aux = Arrays.copyOfRange(text, 1, j+1);
-		try {
-			((EditText) addSiteView.findViewById(R.id.dialog_add_et_login))
-					.setText(new String(aux, "UTF-8"));
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		Arrays.fill(aux, (byte) 0);
-
-		aux = Arrays.copyOfRange(text, j+1, text.length);	
-		try {
-			((EditText) addSiteView.findViewById(R.id.dialog_add_et_password))
-					.setText(new String(aux,"UTF-8"));
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-		Arrays.fill(aux, (byte) 0);
-
-		EditText editSiteName = ((EditText) addSiteView
-				.findViewById(R.id.dialog_add_et_name));
-		//editSiteName.setFocusable(false);
-		//editSiteName.setTextColor(getResources().getColor(R.color.Grey));
-		final String OldSiteName = passwordLog.getSiteName();
-		editSiteName.setText(OldSiteName);
-
-		builder.setView(addSiteView)
-				.setPositiveButton(R.string.validate_label,
-						new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog, int id) {
-								String siteName = ((EditText) addSiteView
-										.findViewById(R.id.dialog_add_et_name))
-										.getText().toString();
-								Editable ELogin = ((EditText) addSiteView
-										.findViewById(R.id.dialog_add_et_login))
-										.getText();
-								Editable EPassword = ((EditText) addSiteView
-										.findViewById(R.id.dialog_add_et_password))
-										.getText();
-
-								byte[] siteLogin = null;
-								byte[] sitePassword = null;
-								
-								
-								try {
-									siteLogin = ELogin.toString().getBytes("UTF-8");
-								} catch (UnsupportedEncodingException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								}
-								try {
-									sitePassword = EPassword.toString().getBytes("UTF-8");
-								} catch (UnsupportedEncodingException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								}
-
-								if (!siteName.equals("") && (siteLogin.length != 0) && (sitePassword.length != 0))
-								{
-									ByteBuffer plainText = ByteBuffer.allocate(siteLogin.length+sitePassword.length+1);
-									plainText.put((byte)siteLogin.length);
-									plainText.put(siteLogin);
-									plainText.put(sitePassword);
-									Arrays.fill(siteLogin, (byte)0);
-									Arrays.fill(sitePassword, (byte)0);
-									
-									byte[] crypto = cipher.chiffre(password, plainText.array());
-									plainText.rewind();
-									plainText.put((byte)0);
-									plainText.put(siteLogin,0,siteLogin.length);
-									plainText.put(sitePassword,0,sitePassword.length);
-									PasswordLog passwordLog = new PasswordLog(siteName, crypto);
-									datasource.open();
-									datasource.update(OldSiteName,passwordLog);
-									datasource.close();
-								}
-								else
-								{
-									int Alert_message ;
-									if (siteName.equals(""))
-									{
-										Alert_message = R.string.empty_site;
-									}
-									else if (siteLogin.length == 0)
-									{
-										Alert_message = R.string.empty_login;
-									}
-									else
-									{
-										Alert_message = R.string.empty_passwd;
-									}									
-									new AlertDialog.Builder(builder.getContext())
-									.setIcon(android.R.drawable.ic_dialog_alert)
-									.setTitle(R.string.incomplete_Field)
-									.setMessage(Alert_message)
-									.setPositiveButton(R.string.validate_label,
-											new DialogInterface.OnClickListener() {
-												@Override
-												public void onClick(DialogInterface dialog,
-														int which) {
-													//refreshList();
-													editSite(index, letexte);
-													Arrays.fill(letexte, (byte) 0);
-												}
-
-											}).show();
-
-								}
-								refreshList();
-
-							}
-						})
-				.setNegativeButton(R.string.cancel_label,
-						new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int id) {
-								dialog.cancel();
-							}
-						});
-		builder.create().show();
-		Arrays.fill(text, (byte) 0);
+        MyDialog InfoEditSite = MyDialog.newInstance(0,0,R.string.validate_label,R.string.cancel_label,0,R.layout.dialog_add,0,action_edit);
+        InfoEditSite.show(getFragmentManager(), "");
 	}
 
 	/**
@@ -298,32 +277,12 @@ public class ListActivity extends Activity implements OnItemClickListener {
 	 * @param index
 	 *            L'index du site dans le tableau values[]
 	 */
-	public void deleteSite(int index) {
-		// final pour y avoir accès dans le onclick
-		final PasswordLog passwordLog = values[index];
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(R.string.deleteOne_message)
-                .setPositiveButton(R.string.validate_label,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog,
-                                                int which) {
-                                datasource.open();
-                                datasource.delete(passwordLog);
-                                datasource.close();
-                                refreshList();
-                            }
 
-                        })
-                .setNegativeButton(R.string.cancel_label,
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
+    public void deleteSite(int index) {
 
-        builder.create().show();
-	}
+        MyDialog Info = MyDialog.newInstance(0,R.string.deleteOne_message,R.string.validate_label,R.string.cancel_label,0,0,index,action_delete);
+        Info.show(getFragmentManager(), "");
+    }
 
 	/**
 	 * Récupère les données dans la base et met à jour l'Adapter de la listView
@@ -339,6 +298,95 @@ public class ListActivity extends Activity implements OnItemClickListener {
 		listview.setAdapter(adapter);
 		adapter.notifyDataSetChanged();
 	}
+
+    public void doPositiveClick(int action, int index, View v)
+    {
+        switch (action)
+        {
+            case action_delete :
+                datasource.open();
+                datasource.delete(values[index]);
+                datasource.close();
+                refreshList();
+                break;
+            case action_empty :
+                editSite(index,text);
+                break;
+            case action_edit :
+                String siteName = ((EditText) v
+                        .findViewById(R.id.dialog_add_et_name))
+                        .getText().toString();
+                Editable ELogin = ((EditText) v
+                        .findViewById(R.id.dialog_add_et_login))
+                        .getText();
+                Editable EPassword = ((EditText) v
+                        .findViewById(R.id.dialog_add_et_password))
+                        .getText();
+
+                byte[] siteLogin = null;
+                byte[] sitePassword = null;
+
+                try {
+                    siteLogin = ELogin.toString().getBytes("UTF-8");
+                } catch (UnsupportedEncodingException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+                try {
+                    sitePassword = EPassword.toString().getBytes("UTF-8");
+                } catch (UnsupportedEncodingException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+
+                if (!siteName.equals("") && (siteLogin.length != 0) && (sitePassword.length != 0))
+                {
+                    ByteBuffer plainText = ByteBuffer.allocate(siteLogin.length+sitePassword.length+1);
+                    plainText.put((byte)siteLogin.length);
+                    plainText.put(siteLogin);
+                    plainText.put(sitePassword);
+                    Arrays.fill(siteLogin, (byte)0);
+                    Arrays.fill(sitePassword, (byte)0);
+                    Arrays.fill(text, (byte) 0);
+
+                    byte[] crypto = cipher.chiffre(password, plainText.array());
+                    plainText.rewind();
+                    plainText.put((byte)0);
+                    plainText.put(siteLogin,0,siteLogin.length);
+                    plainText.put(sitePassword,0,sitePassword.length);
+                    PasswordLog passwordLog = new PasswordLog(siteName, crypto);
+                    datasource.open();
+                    datasource.update(values[index].getSiteName(),passwordLog);
+                    datasource.close();
+                }
+                else
+                {
+                    int Alert_message ;
+                    if (siteName.equals(""))
+                    {
+                        Alert_message = R.string.empty_site;
+                    }
+                    else if (siteLogin.length == 0)
+                    {
+                        Alert_message = R.string.empty_login;
+                    }
+                    else
+                    {
+                        Alert_message = R.string.empty_passwd;
+                    }
+                    MyDialog Infoempty = MyDialog.newInstance(R.string.incomplete_Field,Alert_message,R.string.validate_label,0,android.R.drawable.ic_dialog_alert,0,index,action_empty);
+                    Infoempty.show(getFragmentManager(), "");
+                }
+                refreshList();
+                break;
+        }
+    }
+
+    public void doNegativeClick(int action, DialogInterface d)
+    {
+        Arrays.fill(text,(byte)0);
+        d.dismiss();
+    }
 
     public void MyonClick(View v)
     {
@@ -361,7 +409,6 @@ public class ListActivity extends Activity implements OnItemClickListener {
 
             case R.id.button_edit :
                 editSite(laposition,text);
-                Arrays.fill(text, (byte) 0);
                 InfoDialog.dismiss();
                 break;
 
