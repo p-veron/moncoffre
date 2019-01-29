@@ -5,47 +5,33 @@
     density="420dpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="7133961044112"
+    timestamp="55577410382983"
     token="-8716663038956227530"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="419" />
+        duration="3119" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="186" />
+        duration="1800" />
     <task
         name="verifier"
-        duration="1" />
+        duration="119" />
 
     <artifact
-        location="/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
-        type="DEX" />
+        location="/Users/pascal/Dropbox/Cours/MyKnox/app/build/outputs/apk/app-debug.apk"
+        type="MAIN" />
 
     <build
-        timestamp="5595430514672"
+        timestamp="55577410382983"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/pascal/Dropbox/Cours/MyKnox/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="6258895265284"
-        verifier="FIELD_TYPE_CHANGE" >
-        <artifact
-            location="/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-            type="RESOURCES" />
-    </build>
-    <build
-        timestamp="7133961044112"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>

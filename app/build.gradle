@@ -5,7 +5,7 @@ android {
 
     defaultConfig {
         applicationId "fr.toulon.masterdapm.MonCoffre"
-        minSdkVersion 19
+        minSdkVersion 16
         targetSdkVersion 19
     }
 

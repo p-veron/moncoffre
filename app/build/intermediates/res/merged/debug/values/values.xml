@@ -9,7 +9,7 @@
     <integer name="max_size_passwd">20</integer>
     <string name="action_settings">Settings</string>
     <string name="app_name">Mon Coffre</string>
-    <string name="apropos"/>
+    <string name="apropos">A propos</string>
     <string name="authors">Mon Coffre\nRomain Moreau, Pascal Véron</string>
     <string name="backup">Sauvegarde de la base</string>
     <string name="button_add_label">Ajouter un site</string>

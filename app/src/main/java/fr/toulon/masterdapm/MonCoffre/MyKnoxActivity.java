@@ -501,7 +501,9 @@ public class MyKnoxActivity extends Activity {
         String [] tab_email = new String[1];
         tab_email[0] = email;
         writeToExternal("passwords.db.sc");
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+//        Intent emailIntent = new Intent(Intent.ACTION_SENDTO,Uri.fromParts(
+//                "mailto", email, null));
+		Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setType("text/plain");
         emailIntent.putExtra(Intent.EXTRA_EMAIL, tab_email);
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Sauvegarde BD Mon Coffre");
@@ -513,7 +515,7 @@ public class MyKnoxActivity extends Activity {
         if (!filetemp.exists())
         {
             Log.d("KNOX","No file");
-            Toast.makeText(this,"Fichier passwords.ds.sc inexistant",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Fichier passwords.db.sc inexistant",Toast.LENGTH_LONG).show();
             return;
         }
         if (!filetemp.canRead()) {
@@ -522,10 +524,8 @@ public class MyKnoxActivity extends Activity {
             return;
         }
         Uri uri = Uri.fromFile(filetemp);
-        String mimeType = getContentResolver().getType(uri);
-        Log.d("KOX","Mime : "+mimeType);
         emailIntent.putExtra(Intent.EXTRA_STREAM, uri);
-        //  emailIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+		emailIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivityForResult(Intent.createChooser(emailIntent, "Pick an Email provider"),12);
     }
 
