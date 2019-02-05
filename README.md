@@ -1,4 +1,4 @@
-# moncoffre
+# MonCoffre
 <img src="img/accueil.png" width="30%" align="left"> **Application Android permettant le stockage sécurisé de vos identifiants**<br>
 Cette application permet de stocker dans une base de données sur votre téléphone les identifiants et les mots de passe que vous utilisez pour vous connecter sur différents sites web. La base de données est chiffrée en utilisant le standard de chiffrement
 AES-128. La clé de 128 bits utilisée est dérivée à partir d'un mot de passe principal saisi au lancement de l'application. La 
