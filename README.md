@@ -6,9 +6,11 @@ dérivation est effectuée en suivant le standard PBKDF2 (Password Based Key Der
 
 Contrairement à d'autres applications similaires, l'application MonCoffre ne demande pas d'autorisation d'accès à vos contacts, votre position, vos photos, etc.. Et surtout elle ne demande aucune autorisation concernant l'accès réseau vous garantissant qu'aucune donnée saisie ne sera tranmsise à votre insu via un quelconque réseau. La seule autorisation demandée est l'accès à votre espace de stockage afin de pouvoir créer une sauvegarde de la base lorsque vous cliquez sur l'option "Sauvegarder la base". 
 
-Pour que cette option fonctionne, il est indispensable que soit installée sur votre téléphone une appication mail pour laquelle vous avez configuré un compte. Dans ce cas, l'application MonCoffre crééra un mail contenant en pièce jointe votre base de données chiffrée et vous pourrez envoyer ce dernier via votre application mail. Il est important ici de noter que ce n'est pas l'application MonCoffre qui envoie le mail puisqu'elle ne possède pas l'autorisation d'accès au réseau, il s'agit de l'application mail installée sur votre téléphone qui se chargera de cet envoi.
+Pour que cette option fonctionne, il est indispensable que soit installée sur votre téléphone une application mail pour laquelle vous avez configuré un compte. Dans ce cas, l'application MonCoffre créera un mail contenant en pièce jointe votre base de données chiffrée et vous pourrez envoyer ce dernier via votre application mail. Il est important ici de noter que ce n'est pas l'application MonCoffre qui envoie le mail puisqu'elle ne possède pas l'autorisation d'accès au réseau, il s'agit de l'application mail installée sur votre téléphone qui se chargera de cet envoi.
 
 L'application MonCoffre est issue d'un projet donné aux étudiants du Master 2 DAPM de l'université de Toulon (Développement et Applications sur Plateformes Mobiles) dans le cadre du module "Protocoles Cryptographiques".
+
+Une version directement installable se trouve dans le répertoire **app** : **MonCoffre.apk**.
 
 TODO :
 
