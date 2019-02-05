@@ -13,6 +13,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1f674d06-b5d7-4575-8861-509594bff1f2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="MyKnox.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -2372,7 +2373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549354103747</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Update Readme.md">
+      <created>1549354112937</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1549354112937</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
