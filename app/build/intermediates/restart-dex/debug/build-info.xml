@@ -5,29 +5,29 @@
     density="420dpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="56520815958218"
+    timestamp="16405053233304"
     token="-8716663038956227530"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="3626" />
+        duration="3866" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="5372" />
+        duration="1071" />
     <task
         name="verifier"
-        duration="971" />
+        duration="88" />
 
     <artifact
         location="/Users/pascal/Dropbox/Cours/MyKnox/app/build/outputs/apk/app-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="56520815958218"
+        timestamp="16405053233304"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/pascal/Dropbox/Cours/MyKnox/app/build/outputs/apk/app-debug.apk"

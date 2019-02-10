@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="22.0.1"
-        sha1="7125ba44dbc5d5cf543fc5c3213f0b097059edac">
+        sha1="329807168a27ea36ce156790a8bce83b31080657">
         <dex dex="/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_46d4f389192bac75a7727c04538634b379d16a99/classes.dex" />
     </item>
     <item
@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="22.0.1"
-        sha1="da744bec249c35737bbaeeffb1a5ca15b81974e9">
+        sha1="e207dd49e619a62b44f4d3985c4a957383b161d6">
         <dex dex="/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_73830c6723a02a55dd5cc031632931f32dc9dc2f/classes.dex" />
     </item>
 

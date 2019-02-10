@@ -1,9 +1,9 @@
 #Internal package file, do not edit.
-#Tue Jan 29 22:44:21 CET 2019
+#Sun Feb 10 12:54:31 CET 2019
 22.set=ANDROID_RESOURCE
 8.set=ANDROID_RESOURCE
 11.set=ANDROID_RESOURCE
-14.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/layout-v17/dialog_show.xml
+14.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/ic_menu_web.png
 14.base=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_
 16.set=ANDROID_RESOURCE
 count=25
@@ -17,9 +17,9 @@ count=25
 7.set=ANDROID_RESOURCE
 20.base=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_
 10.set=ANDROID_RESOURCE
-15.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/ic_menu_web.png
+15.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/layout-v17/dialog_show.xml
 15.base=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_
-7.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/menu/main.xml
+7.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/layout/activity_main.xml
 7.base=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_
 15.set=ANDROID_RESOURCE
 1.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/layout/dialog_choose_password.xml
@@ -31,7 +31,7 @@ count=25
 16.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/layout/dialog_change_password.xml
 6.set=ANDROID_RESOURCE
 16.base=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_
-8.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/layout/activity_main.xml
+8.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/menu/main.xml
 8.base=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_
 17.file=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_/res/layout/activity_apropos.xml
 17.base=/Users/pascal/Dropbox/Cours/MyKnox/app/build/intermediates/res/resources-debug.ap_

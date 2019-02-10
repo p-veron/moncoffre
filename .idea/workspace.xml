@@ -12,8 +12,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f674d06-b5d7-4575-8861-509594bff1f2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/zip-cache/yp69X57FQPfKBqN011uiXrCUj9E=" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/zip-cache/yp69X57FQPfKBqN011uiXrCUj9E=" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageInstantRunResourcesDebug/zip-cache/yp69X57FQPfKBqN011uiXrCUj9E=" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageInstantRunResourcesDebug/zip-cache/yp69X57FQPfKBqN011uiXrCUj9E=" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/instant-run.zip" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/instant-run.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xxhdpi.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xxhdpi.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/file-input-save-data.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/file-input-save-data.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageInstantRunResourcesDebug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageInstantRunResourcesDebug/dex-renamer-state.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageInstantRunResourcesDebug/file-input-save-data.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageInstantRunResourcesDebug/file-input-save-data.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/restart-dex/debug/build-info.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/restart-dex/debug/build-info.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/fr/toulon/masterdapm/MonCoffre/ListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/fr/toulon/masterdapm/MonCoffre/ListActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
     </list>
     <ignored path="MyKnox.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,16 +73,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider editor-type-id="android-manifest">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="10" column="56" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-manifest">
+            <state />
           </provider>
         </entry>
       </file>
@@ -69,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ListActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/toulon/masterdapm/MonCoffre/ListActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2520">
-              <caret line="198" column="54" selection-start-line="198" selection-start-column="54" selection-end-line="198" selection-end-column="54" />
+            <state relative-caret-position="181">
+              <caret line="46" column="20" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -1769,13 +1796,13 @@
         <option value="$PROJECT_DIR$/app/src/main/java/fr/toulon/masterdapm/MonCoffre/lib/PasswordLogDataSource.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/fr/toulon/masterdapm/MonCoffre/lib/Mydialog2.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/fr/toulon/masterdapm/MonCoffre/lib/MyDialog.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/fr/toulon/masterdapm/MonCoffre/ListActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_email.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/fr/toulon/masterdapm/MonCoffre/MyKnoxActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/fr/toulon/masterdapm/MonCoffre/ListActivity.java" />
       </list>
     </option>
   </component>
@@ -1950,7 +1977,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane">
+      <pane id="PackagesPane">
         <subPane />
       </pane>
       <pane id="Scope">
@@ -1975,7 +2002,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
+      <pane id="ProjectPane">
         <subPane />
       </pane>
     </panes>
@@ -2415,7 +2442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549356968631</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Update Readme.md">
+      <created>1549357106502</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1549357106502</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -2440,21 +2474,21 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19639935" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31423897" sideWeight="0.49676898" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31423897" sideWeight="0.49676898" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32552505" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21324718" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2816,14 +2850,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/toulon/masterdapm/MonCoffre/ListActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2520">
-          <caret line="198" column="54" selection-start-line="198" selection-start-column="54" selection-end-line="198" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2874,6 +2900,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/fr/toulon/masterdapm/MonCoffre/ListActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="46" column="20" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="20" />
           <folding />
         </state>
       </provider>

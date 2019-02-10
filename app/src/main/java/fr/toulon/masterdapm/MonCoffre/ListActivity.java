@@ -267,7 +267,7 @@ public class ListActivity extends Activity implements OnItemClickListener {
 	 */
 	public void editSite(final int index, final byte[] text) {
 		
-        MyDialog InfoEditSite = MyDialog.newInstance(0,0,R.string.validate_label,R.string.cancel_label,0,R.layout.dialog_add,0,action_edit);
+        MyDialog InfoEditSite = MyDialog.newInstance(0,0,R.string.validate_label,R.string.cancel_label,0,R.layout.dialog_add,index,action_edit);
         InfoEditSite.show(getFragmentManager(), "");
 	}
 
