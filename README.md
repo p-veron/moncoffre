@@ -10,8 +10,9 @@ Pour que cette option fonctionne, il est indispensable que soit installée sur v
 
 L'application MonCoffre est issue d'un projet donné aux étudiants du Master 2 DAPM de l'université de Toulon (Développement et Applications sur Plateformes Mobiles) dans le cadre du module "Protocoles Cryptographiques".
 
-Une version directement installable se trouve dans le répertoire **app** : **MonCoffre.apk** ou directement sur http://veron.univ-tln.fr/MonCoffre.apk.
-sha256sum : 51f0a9fc019ef022207c4dc79798d7bba82ee62ee80f24b4a99df9c14c237e9c
+Une version directement installable se trouve dans le répertoire **app** : **MonCoffre.apk** ou directement sur:
+http://veron.univ-tln.fr/MonCoffre.apk.
+**sha256sum : 51f0a9fc019ef022207c4dc79798d7bba82ee62ee80f24b4a99df9c14c237e9c**
 
 TODO :
 
