@@ -342,6 +342,11 @@ public class ListActivity extends Activity implements OnItemClickListener {
                 if (!siteName.equals("") && (siteLogin.length != 0) && (sitePassword.length != 0))
                 {
                     ByteBuffer plainText = ByteBuffer.allocate(siteLogin.length+sitePassword.length+1);
+                    /* le texte clair est compos'e de
+                    - premier octet : nombre de caract`eres du login
+                    - octets suivants : login
+                    - octets suivants : password
+                     */
                     plainText.put((byte)siteLogin.length);
                     plainText.put(siteLogin);
                     plainText.put(sitePassword);

@@ -19,11 +19,24 @@ import javax.crypto.spec.SecretKeySpec;
 
 import android.util.Log;
 
+
+
 public class MyCipher {
 	private static int ITER = 10000;
 	private static int SIZE = 128;
 
 	private SecretKey key;
+	/* nullIV utilis'e pour chiffrer le IV en mode CBC */
+	private static byte[] nullIV = {(byte)0x0,(byte)0x0,(byte)0x0,(byte)0x0,(byte)0x0,(byte)0x0,(byte)0x0,(byte)0x0,(byte)0x0,(byte)0x0,(byte)0x0,(byte)0x0,(byte)0x0,(byte)0x0,(byte)0x0,(byte)0x0};
+
+	/* utile uniquement pour le debuggage */
+	/* pas optimise */
+	public static String byteArrayToHex(byte[] a) {
+		StringBuilder sb = new StringBuilder(a.length * 2);
+		for(byte b: a)
+			sb.append(String.format("%02x", b));
+		return sb.toString();
+	}
 
 	/**
 	 * Crypt a message with a key derivated from a password
@@ -40,7 +53,7 @@ public class MyCipher {
 		byte[] sel = new byte[16];
 		SecureRandom random = new SecureRandom();
 		Cipher cipherCBC = null;
-		Cipher cipherECB = null;
+		Cipher cipherCBCwithNullIV = null;
 		byte[] iV = null;
 		byte[] encryptedMessage = null;
 		byte[] encryptedIV = null;
@@ -59,44 +72,57 @@ public class MyCipher {
 			return null;
 		}
 
-		// Creation of the ECB Cipher for the IV
+		// Creation of the CBC Cipher for the IV
+		// normalement le IV peut etre chiffre en ECB
+		// mais cela ne fonctionne pas avec la librairie javascript WebCrypto 20170126
+		// https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API
+		// Cette librairie ne propose pas l'AES/ECB/Nopadding
+		// C'est pourquoi on chiffre ici le IV en CBC/PKCS5Padding
+        // afin d'assurer la compatibilite de l'appli Android avec le client Web
 		try {
-			cipherECB = Cipher.getInstance("AES/ECB/NoPadding");
+			cipherCBCwithNullIV = Cipher.getInstance("AES/CBC/PKCS5Padding");
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 			Log.e("masterdapm.MonCoffre",
-					"NoSuchAlgorithmException on Creation of ECB Cipher");
+					"NoSuchAlgorithmException on Creation of CBC Cipher for the IV");
 			return null;
 		} catch (NoSuchPaddingException e) {
 			e.printStackTrace();
-			Log.e("masterdapm.MonCoffre", "NoSuchPaddingException on Creation of ECB Cipher");
+			Log.e("masterdapm.MonCoffre", "NoSuchPaddingException on Creation of CBC Cipher for the IV");
 			return null;
 		}
 
 		random.nextBytes(sel);
 		key = genAESKeyFromPass(password, sel, ITER, SIZE);
+		//Log.d("masterdapm.MonCoffre",new String(password)+" "+byteArrayToHex(sel)+" "+byteArrayToHex(key.getEncoded()));
 
-		// Initialisation of the CBC Cipher
+		// Initialisation of the CBC Cipher for the message
 		try {
 			cipherCBC.init(Cipher.ENCRYPT_MODE, key, random);
 		} catch (InvalidKeyException e) {
 			e.printStackTrace();
-			Log.e("masterdapm.MonCoffre", "InvalidKeyException on init of CBC Cipher");
+			Log.e("masterdapm.MonCoffre", "InvalidKeyException on init of CBC Cipher for the message");
 			return null;
 		}
 
-		// Initialisation of the ECB Cipher
+		// Initialisation of the CBC Cipher for the IV
+		// on chiffre le IV en mode CBC avec un vecteur initial nul
+		IvParameterSpec ivspec = new IvParameterSpec(nullIV);
 		try {
-			cipherECB.init(Cipher.ENCRYPT_MODE, key, random);
+			cipherCBCwithNullIV.init(Cipher.ENCRYPT_MODE, key,ivspec);
 		} catch (InvalidKeyException e) {
 			e.printStackTrace();
-			Log.e("masterdapm.MonCoffre", "InvalidKeyException on init of ECB Cipher");
+			Log.e("masterdapm.MonCoffre", "InvalidKeyException on init of CBC Cipher for the IV");
 			return null;
+		} catch (InvalidAlgorithmParameterException e) {
+			e.printStackTrace();
+			Log.e("masterdapm.MonCoffre", "InvalidParameterException on init of CBC Cipher for the IV");
 		}
 
 		// Encryption of the message
 		try {
 			encryptedMessage = cipherCBC.doFinal(plaintext);
+			//Log.d("masterdapm.MonCoffre","crypto "+byteArrayToHex(encryptedMessage));
 		} catch (IllegalBlockSizeException e) {
 			e.printStackTrace();
 			Log.e("masterdapm.MonCoffre", "IllegalBlockSize on encryption of message");
@@ -111,7 +137,9 @@ public class MyCipher {
 
 		// Encryption of the IV
 		try {
-			encryptedIV = cipherECB.doFinal(iV);
+			encryptedIV = cipherCBCwithNullIV.doFinal(iV);
+			Log.d("masterdapm.MonCoffre", "Clair IV : "+byteArrayToHex(iV));
+			Log.d("masterdapm.MonCoffre", "Crypto IV : "+byteArrayToHex(encryptedIV));
 		} catch (IllegalBlockSizeException e) {
 			e.printStackTrace();
 			Log.e("masterdapm.MonCoffre", "IllegalBlockSize on encryption of iv");
@@ -147,19 +175,18 @@ public class MyCipher {
 		int size = 16;
 
 		byte[] iV = null;
-		byte[] encryptedIV = new byte[size];
+		byte[] encryptedIV = new byte[2*size];
 		buffer.get(encryptedIV);
 
 		byte[] sel = new byte[size];
 		buffer.get(sel);
 
 		byte[] message = null;
-		byte[] encryptedMessage = new byte[buffer.capacity() - (size * 2)];
+		byte[] encryptedMessage = new byte[buffer.capacity() - encryptedIV.length - sel.length];
 		buffer.get(encryptedMessage);
 
-		SecureRandom random = new SecureRandom();
 		Cipher cipherCBC = null;
-		Cipher cipherECB = null;
+		Cipher cipherCBCwithIVNull = null;
 
 		key = genAESKeyFromPass(password, sel, ITER, SIZE);
 
@@ -174,9 +201,9 @@ public class MyCipher {
 			return null;
 		}
 
-		// Creation of the ECB Cipher for the IV
+		// Creation of the CBC Cipher for the IV
 		try {
-			cipherECB = Cipher.getInstance("AES/ECB/NoPadding");
+			cipherCBCwithIVNull = Cipher.getInstance("AES/CBC/PKCS5Padding");
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 			return null;
@@ -186,15 +213,20 @@ public class MyCipher {
 		}
 
 		// Decryption of the IV
+
+		IvParameterSpec iPS = new IvParameterSpec(nullIV);
 		try {
-			cipherECB.init(Cipher.DECRYPT_MODE, key, random);
+			cipherCBCwithIVNull.init(Cipher.DECRYPT_MODE, key, iPS);
 		} catch (InvalidKeyException e) {
 			e.printStackTrace();
 			return null;
+		} catch (InvalidAlgorithmParameterException e) {
+			e.printStackTrace();
 		}
 
 		try {
-			iV = cipherECB.doFinal(encryptedIV);
+			iV = cipherCBCwithIVNull.doFinal(encryptedIV);
+			Log.d("masterdapm.MonCoffre","IV decipher"+byteArrayToHex(iV));
 		} catch (IllegalBlockSizeException e) {
 			e.printStackTrace();
 			return null;
@@ -203,7 +235,7 @@ public class MyCipher {
 			return null;
 		}
 
-		IvParameterSpec iPS = new IvParameterSpec(iV);
+		iPS = new IvParameterSpec(iV);
 
 		// Decryption of the message
 		try {
