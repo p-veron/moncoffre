@@ -15,6 +15,8 @@ http://veron.univ-tln.fr/MonCoffre.apk.
 
 **sha256sum : f437559ffdaffdfed5f549a1d1714c6f6f5f1f9e6bdd70f0b9eed75eb5ddd393**
 
+Le dossier pythonclient contient un script Python permet de lire sur un PC le contenu de la base de données sécurisée que l'on récupère de l'application via le menu "Sauvegarder Base".
+
 TODO :
 
 - Développer une interface Web permettant de gérer sur un poste de travail la base de données exportée via l'option "Sauvegarder la base"
